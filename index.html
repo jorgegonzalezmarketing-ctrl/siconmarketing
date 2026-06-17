@@ -224,13 +224,16 @@ section.block{padding:clamp(70px,10vw,130px) clamp(20px,5vw,64px);position:relat
 .reel-id{padding:0 2px;margin-bottom:14px}
 .reel-who{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:-.01em;line-height:1.1}
 .reel-role{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-45);margin-top:5px}
-.reel-metrics{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px;padding:0 2px}
-.reel-metric{display:inline-flex;align-items:center;gap:10px;background:var(--manjar);
-  border-radius:13px;padding:9px 15px 9px 13px}
-.reel-metric svg{width:18px;height:18px;color:var(--tierra);flex:none}
-.reel-metric .num{font-family:var(--f-display);font-weight:800;font-size:21px;letter-spacing:-.02em;
+.reel-metrics{margin-bottom:16px;padding:0 2px}
+.rm-cap{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin-bottom:9px}
+.rm-cap svg{width:15px;height:15px;color:var(--tierra);flex:none}
+.rm-row{display:flex;flex-wrap:nowrap;gap:9px}
+.reel-metric{display:inline-flex;align-items:baseline;gap:7px;background:var(--manjar);
+  border-radius:12px;padding:9px 14px;white-space:nowrap}
+.reel-metric .num{font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:-.02em;
   color:var(--ink);line-height:1}
-.reel-metric .lbl{font-size:12.5px;color:var(--ink-70);font-weight:600;line-height:1.15}
+.reel-metric .plat{font-size:12.5px;color:var(--ink-70);font-weight:600}
 .reel-embed{position:relative;border-radius:18px;overflow:hidden;background:var(--manjar);
   min-height:500px;box-shadow:0 26px 54px -30px rgba(44,38,31,.5);
   transition:transform .4s cubic-bezier(.2,.7,.2,1)}
@@ -462,14 +465,14 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
           <div class="reel-role"><span class="dot"></span> Realización</div>
         </div>
         <div class="reel-metrics">
-          <span class="reel-metric">
+          <div class="rm-cap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="num">463K</span><span class="lbl">reproducciones<br>en Instagram</span>
-          </span>
-          <span class="reel-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="num">705K</span><span class="lbl">reproducciones<br>en TikTok</span>
-          </span>
+            Reproducciones
+          </div>
+          <div class="rm-row">
+            <span class="reel-metric"><span class="num">463K</span><span class="plat">Instagram</span></span>
+            <span class="reel-metric"><span class="num">705K</span><span class="plat">TikTok</span></span>
+          </div>
         </div>
         <div class="reel-embed">
           <a class="reel-fallback" href="https://www.instagram.com/reel/DW6Wlh1gBfv/" target="_blank" rel="noopener" data-cursor="ver">
@@ -485,10 +488,13 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
           <div class="reel-role"><span class="dot"></span> Realización + edición</div>
         </div>
         <div class="reel-metrics">
-          <span class="reel-metric">
+          <div class="rm-cap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="num">54K</span><span class="lbl">reproducciones<br>en Instagram</span>
-          </span>
+            Reproducciones
+          </div>
+          <div class="rm-row">
+            <span class="reel-metric"><span class="num">54K</span><span class="plat">Instagram</span></span>
+          </div>
         </div>
         <div class="reel-embed">
           <a class="reel-fallback" href="https://www.instagram.com/reel/DSxgJ2DjZSn/" target="_blank" rel="noopener" data-cursor="ver">
@@ -504,10 +510,13 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
           <div class="reel-role"><span class="dot"></span> Realización</div>
         </div>
         <div class="reel-metrics">
-          <span class="reel-metric">
+          <div class="rm-cap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="num">582K</span><span class="lbl">reproducciones<br>en Instagram</span>
-          </span>
+            Reproducciones
+          </div>
+          <div class="rm-row">
+            <span class="reel-metric"><span class="num">582K</span><span class="plat">Instagram</span></span>
+          </div>
         </div>
         <div class="reel-embed">
           <a class="reel-fallback" href="https://www.instagram.com/reel/DMVjM1lsjKF/" target="_blank" rel="noopener" data-cursor="ver">
