@@ -258,17 +258,26 @@ section.block{padding:clamp(70px,10vw,130px) clamp(20px,5vw,64px);position:relat
   background:var(--tierra);padding:7px 16px;border-radius:999px;white-space:nowrap;
   box-shadow:0 10px 24px -10px rgba(166,90,55,.8)}
 .plan .pname{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:-.02em;margin-bottom:4px}
-.plan .ptag{font-size:14px;color:var(--ink-45);margin-bottom:24px}
-.plan.feature .ptag{color:var(--paper-50)}
-.plan .pprice{font-family:var(--f-display);font-weight:800;font-size:38px;letter-spacing:-.02em;
-  line-height:1;margin-bottom:4px}
-.plan .pprice .per{font-size:15px;font-weight:600;color:var(--ink-45)}
-.plan.feature .pprice .per{color:var(--paper-50)}
-.plan .pnet{font-size:12px;color:var(--ink-45);margin-bottom:26px}
-.plan.feature .pnet{color:var(--paper-50)}
+.plan .ptag{font-size:14px;color:var(--ink-45);margin-bottom:26px;padding-bottom:22px;
+  border-bottom:1px solid var(--ink-15)}
+.plan.feature .ptag{color:var(--paper-50);border-color:rgba(251,245,236,.22)}
 .plan ul{list-style:none;display:flex;flex-direction:column;gap:13px;font-size:15px}
 .plan li{display:flex;gap:12px;align-items:flex-start}
 .plan li .dot{flex:none;margin-top:8px}
+
+.plans-extra{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px;
+  align-items:stretch}
+@media (max-width:880px){.plans-extra{grid-template-columns:1fr}}
+.plans-extra .pe-item,.plans-extra .pe-cta{background:var(--paper);border:1.5px solid var(--ink-15);
+  border-radius:20px;padding:30px 32px}
+.plans-extra .pe-cta{background:var(--arcilla);border-color:transparent;display:flex;
+  flex-direction:column;justify-content:center;gap:20px;align-items:flex-start}
+.pe-name{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:-.02em;
+  color:var(--ink);display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.pe-name .dot{flex:none}
+.plans-extra p{font-size:15px;color:var(--ink-70);text-wrap:pretty}
+.plans-extra p b{color:var(--ink)}
+.plans-extra .pe-cta p{color:rgba(44,38,31,.82)}
 
 /* ── SOBRE MÍ ────────────────────────────────── */
 .about{background:var(--oliva)}
@@ -540,12 +549,10 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
       <div class="plan reveal" data-cursor="elegir">
         <div class="pname">Esencial</div>
         <div class="ptag">Para empezar con orden</div>
-        <div class="pprice">$300.000<span class="per"> /mes</span></div>
-        <div class="pnet">valor neto + IVA</div>
         <ul>
           <li><span class="dot"></span> 4 videos (reels) al mes</li>
           <li><span class="dot"></span> 4 publicaciones al mes</li>
-          <li><span class="dot"></span> Gestión de campañas incluida</li>
+          <li><span class="dot"></span> Publicación en Instagram y Facebook</li>
           <li><span class="dot"></span> Reporte mensual de resultados</li>
         </ul>
       </div>
@@ -554,13 +561,11 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
         <span class="badge">Más elegido</span>
         <div class="pname">Pro</div>
         <div class="ptag">Para crecer en serio</div>
-        <div class="pprice">$500.000<span class="per"> /mes</span></div>
-        <div class="pnet">valor neto + IVA</div>
         <ul>
           <li><span class="dot"></span> 8 videos (reels) al mes</li>
           <li><span class="dot"></span> 8 publicaciones al mes</li>
           <li><span class="dot"></span> Publicación también en TikTok</li>
-          <li><span class="dot"></span> Gestión de campañas incluida</li>
+          <li><span class="dot"></span> Gestión de comentarios y mensajes</li>
           <li><span class="dot"></span> Reporte mensual de resultados</li>
         </ul>
       </div>
@@ -568,13 +573,24 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
       <div class="plan reveal" data-d="2" data-cursor="elegir">
         <div class="pname">A tu medida</div>
         <div class="ptag">Para necesidades distintas</div>
-        <div class="pprice">Cotización</div>
-        <div class="pnet">según tu negocio</div>
         <ul>
-          <li><span class="dot"></span> Volumen de contenido adaptable</li>
+          <li><span class="dot"></span> La cantidad de videos y publicaciones que tu negocio necesite</li>
           <li><span class="dot"></span> Formatos y plataformas a definir</li>
           <li><span class="dot"></span> Estrategia hecha a tu medida</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="plans-extra reveal">
+      <div class="pe-item">
+        <span class="pe-name"><span class="dot"></span> Gestión de anuncios</span>
+        <p>Campañas en Meta y Google gestionadas mes a mes: armado, segmentación, optimización y análisis. Es un <b>servicio aparte</b> que se suma al plan que elijas, porque la publicidad se trabaja aparte del contenido.</p>
+      </div>
+      <div class="pe-cta">
+        <p>Cada negocio parte en un punto distinto. <b>Cuéntame del tuyo y te mando los valores</b> con una recomendación concreta, sin compromiso.</p>
+        <a href="https://wa.me/56944321958" class="btn-primary" target="_blank" rel="noopener" data-cursor="chat" data-magnetic>
+          Pídeme los valores <span class="arr">→</span>
+        </a>
       </div>
     </div>
   </div>
