@@ -110,11 +110,12 @@ nav .distintivo svg{width:46px;height:46px}
 .hero h1{font-family:var(--f-titulo);font-weight:800;font-size:clamp(48px,9vw,128px);
   line-height:.94;letter-spacing:-.04em;text-wrap:balance;margin-bottom:34px}
 .hero h1 .si-word{position:relative;display:inline-block;color:var(--terracota-f)}
-.hero h1 .si-word .acc{position:absolute;width:.20em;height:.062em;background:var(--terracota);
-  border-radius:.5em;transform:rotate(-27deg);top:.10em;right:.055em;transform-origin:center;
+/* el acento de la marca sobre la ı: misma proporción y ángulo que el distintivo */
+.hero h1 .si-word .acc{position:absolute;width:.185em;height:.074em;background:var(--terracota);
+  border-radius:.5em;transform:rotate(-30deg);top:.055em;right:.045em;transform-origin:center;
   animation:flick 3.4s ease-in-out infinite}
-@keyframes flick{0%,92%,100%{transform:rotate(-27deg) scale(1)}
-  95%{transform:rotate(-27deg) scale(1.3)}}
+@keyframes flick{0%,92%,100%{transform:rotate(-30deg) scale(1)}
+  95%{transform:rotate(-30deg) scale(1.25)}}
 .hero .lead{font-size:clamp(18px,2.2vw,23px);line-height:1.5;color:var(--cafe-2);
   max-width:600px;text-wrap:pretty;margin-bottom:42px}
 .hero .lead b{color:var(--cafe);font-weight:600}
@@ -357,7 +358,7 @@ footer .copy{font-size:13px;letter-spacing:.02em;text-align:right}
   <div class="sticker">Estrategia,<br>no relleno<small>así trabajo</small></div>
   <div class="hero-inner">
     <span class="eyebrow"><span class="dot"></span> Marketing digital · San Felipe, Valle de Aconcagua</span>
-    <h1>Hago que tu negocio<br>diga que <span class="si-word">s&iacute;<span class="acc"></span></span> en internet.</h1>
+    <h1 aria-label="Hago que tu negocio diga que sí en internet.">Hago que tu negocio<br>diga que <span class="si-word" aria-hidden="true">s&#305;<span class="acc"></span></span> en internet.</h1>
     <p class="lead">Soy <b>Jorge González</b>. Ayudo a pymes y emprendedores a construir su marca, su web y su contenido para que se vean profesionales y, sobre todo, <b>vendan</b>. Directo, claro y siempre cercano.</p>
     <div class="hero-cta">
       <a href="https://wa.me/56944321958" class="btn-primary" target="_blank" rel="noopener" data-cursor="chat" data-magnetic>
