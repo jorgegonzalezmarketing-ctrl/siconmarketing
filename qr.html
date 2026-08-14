@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Escanéame — Sí Con Marketing</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="favicon-180.png" />
+<meta name="theme-color" content="#F7EFE3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,700;62..125,800&display=swap" rel="stylesheet" />
+
+<style>
+/* ───────────────────────────────────────────────
+   La pantalla que Jorge le muestra a la persona.
+   Fondo claro a propósito: la cámara del otro
+   engancha más rápido con mucho contraste.
+   ─────────────────────────────────────────────── */
+:root{
+  --crema:#F7EFE3;
+  --manjar:#EADCC0;
+  --arena:#DCC9A6;
+  --terracota:#B5643C;
+  --terracota-f:#8E4526;
+  --cafe:#2E2620;
+  --cafe-3:#6B5B4B;
+  --f:"Archivo",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--crema);
+  color:var(--cafe);
+  font-family:var(--f);
+  min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:22px;
+  padding:24px 20px calc(24px + env(safe-area-inset-bottom));
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+img{display:block;max-width:100%}
+
+.marca{display:flex;align-items:center;gap:10px}
+.marca svg{width:38px;height:38px;display:block}
+.marca span{font-weight:800;font-size:16px;letter-spacing:-.01em}
+
+.instruccion{
+  display:inline-flex;align-items:center;gap:9px;
+  font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--terracota-f);
+}
+.instruccion .dot{width:13px;height:4px;border-radius:999px;background:var(--terracota);transform:rotate(-27deg)}
+
+.marco{
+  position:relative;
+  padding:18px;
+  background:#fff;
+  border:1px solid var(--arena);
+  border-radius:26px;
+  box-shadow:0 20px 50px -26px rgba(46,38,32,.4);
+}
+.marco img{
+  width:min(74vw,52vh,430px);
+  height:auto;
+  image-rendering:pixelated; /* nítido al agrandar: bordes limpios = escaneo más rápido */
+}
+/* esquinas de mira, puro adorno */
+.marco::before,.marco::after{
+  content:"";position:absolute;width:26px;height:26px;border:3px solid var(--terracota);
+}
+.marco::before{top:-3px;left:-3px;border-right:0;border-bottom:0;border-radius:10px 0 0 0}
+.marco::after{bottom:-3px;right:-3px;border-left:0;border-top:0;border-radius:0 0 10px 0}
+
+.quien{line-height:1.35}
+.quien strong{display:block;font-weight:800;font-size:23px;letter-spacing:-.02em}
+.quien span{font-size:14.5px;color:var(--cafe-3);font-weight:500}
+
+.link{
+  font-weight:700;font-size:14px;color:var(--cafe-3);
+  border-bottom:1.5px solid var(--arena);padding-bottom:2px;text-decoration:none;
+}
+
+@media (max-height:660px){
+  body{gap:15px}
+  .marco{padding:13px;border-radius:20px}
+  .marco img{width:min(72vw,46vh,360px)}
+  .quien strong{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="marca">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sí Con Marketing">
+    <circle cx="100" cy="100" r="100" fill="#2E2620"/>
+    <text x="112.05" y="158" text-anchor="end" font-family="Archivo, system-ui, sans-serif" font-weight="800" font-size="113.39" fill="#F7EFE3">S</text>
+    <rect x="115.89" y="81.18" width="23.74" height="76.82" fill="#F7EFE3"/>
+    <polygon points="115.89,75.49 139.63,75.49 149.77,57.44 126.03,57.44" fill="#F7EFE3"/>
+    <rect x="104.75" y="42" width="26.89" height="10.75" rx="5.38" fill="#B5643C" transform="rotate(-30 118.2 47.38)"/>
+  </svg>
+  <span>Sí Con Marketing</span>
+</div>
+
+<span class="instruccion"><span class="dot"></span> Apunta tu cámara aquí</span>
+
+<div class="marco">
+  <img id="qr" src="qr-hola.png" alt="Código QR con el contacto de Jorge González" />
+</div>
+
+<div class="quien">
+  <strong>Jorge González</strong>
+  <span>Marketing digital · San Felipe</span>
+</div>
+
+<a class="link" href="/hola">siconmarketing.vercel.app</a>
+
+<script>
+/* /qr           → QR de la tarjeta de siempre
+   /qr?e=taller  → QR con el saludo del taller ya escrito */
+(function () {
+  var e = new URLSearchParams(location.search).get('e');
+  if (e === 'taller') document.getElementById('qr').src = 'qr-taller.png';
+
+  /* Que la pantalla no se apague mientras lo estás mostrando. */
+  if ('wakeLock' in navigator) {
+    var lock = null;
+    var pedir = function () {
+      navigator.wakeLock.request('screen').then(function (l) { lock = l; }).catch(function () {});
+    };
+    pedir();
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible' && lock === null) pedir();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
