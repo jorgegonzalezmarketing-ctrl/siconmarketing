@@ -193,7 +193,7 @@ h1{font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1.05;margin-
   var eventos = {
     taller: {
       lead: 'Nos vimos en el taller de la municipalidad. Hago que los negocios de la zona <b>se vean bien en internet</b>: páginas web, contenido y redes.',
-      msg: 'Hola Jorge, nos conocimos en el taller de la municipalidad. Soy [tu nombre], de [tu negocio]. Quiero saber más de lo que haces.'
+      msg: '¡Hola Jorge! Soy [tu nombre], nos vimos en el taller.'
     }
   };
 
@@ -201,7 +201,7 @@ h1{font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1.05;margin-
   var cfg = (e && eventos[e]) || null;
 
   var msg = cfg ? cfg.msg
-                : 'Hola Jorge, vi tu tarjeta y quiero conversar sobre mi negocio. Soy [tu nombre], de [tu negocio].';
+                : '¡Hola Jorge! Soy [tu nombre], vi tu tarjeta.';
 
   if (cfg) document.getElementById('lead').innerHTML = cfg.lead;
   document.getElementById('wa').href =
