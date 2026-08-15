@@ -107,7 +107,7 @@ img{display:block;max-width:100%}
 <span class="instruccion"><span class="dot"></span> Apunta tu cámara aquí</span>
 
 <div class="marco">
-  <img id="qr" src="qr-hola.png" alt="Código QR con el contacto de Jorge González" />
+  <img src="qr-hola.png" alt="Código QR con el contacto de Jorge González" />
 </div>
 
 <div class="quien">
@@ -118,12 +118,7 @@ img{display:block;max-width:100%}
 <a class="link" href="/hola">siconmarketing.vercel.app</a>
 
 <script>
-/* /qr           → QR de la tarjeta de siempre
-   /qr?e=taller  → QR con el saludo del taller ya escrito */
 (function () {
-  var e = new URLSearchParams(location.search).get('e');
-  if (e === 'taller') document.getElementById('qr').src = 'qr-taller.png';
-
   /* Que la pantalla no se apague mientras lo estás mostrando. */
   if ('wakeLock' in navigator) {
     var lock = null;
