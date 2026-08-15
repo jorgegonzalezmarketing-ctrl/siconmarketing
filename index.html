@@ -62,10 +62,8 @@ img{display:block;max-width:100%}
   transition:width .25s ease,height .25s ease,background .25s ease,opacity .2s}
 .cursor-dot{width:6px;height:6px;background:var(--terracota-f);transition:opacity .2s ease}
 .cursor.grow{width:74px;height:74px;background:rgba(181,100,60,.14);border-color:transparent}
-.cursor.grow::after{content:attr(data-label);position:absolute;inset:0;display:flex;
-  align-items:center;justify-content:center;font-family:var(--f-texto);font-weight:700;
-  font-size:11px;letter-spacing:.04em;color:var(--terracota-f);text-transform:lowercase}
-/* al agrandarse, esconde el puntito para que no tape la palabra */
+/* El circulo crece sobre lo que se puede pulsar, pero sin texto adentro:
+   la palabra siguiendo al puntero molesta la lectura. */
 .cursor.grow ~ .cursor-dot{opacity:0}
 @media (hover:none),(max-width:760px){.cursor,.cursor-dot{display:none}}
 
